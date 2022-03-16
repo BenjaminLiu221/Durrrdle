@@ -23,33 +23,60 @@ namespace Durrrdle
             while (true)
             {
                 userGuess = Console.ReadLine();
-                var userGuessCharOne = userGuess.ToCharArray()[0];
-                var userGuessCharTwo = userGuess.ToCharArray()[1];
-                var userGuessCharThree = userGuess.ToCharArray()[2];
+
+                int userGuessLength = userGuess.Length;
 
                 ArrayList outputDisplay;
                 outputDisplay = new ArrayList();
 
+                if (userGuessLength != 3)
+                {
+                    Console.WriteLine("That is not a valid guess. Please enter the three letters and then press Enter.");
+                    return true;
+                }
                 if (userGuess == durrrdleWord)
+                {
                     return false;
+                }
                 if (userGuess != durrrdleWord)
+                {
+                    var userGuessCharOne = userGuess.ToCharArray()[0];
+                    var userGuessCharTwo = userGuess.ToCharArray()[1];
+                    var userGuessCharThree = userGuess.ToCharArray()[2];
                     for (int i = 0; i < 1; i++)
                     {
                         if (durrrdleWordCharOne == userGuessCharOne)
+                        {
                             outputDisplay.Add(durrrdleWordCharOne);
+                        }
                         if (durrrdleWordCharOne != userGuessCharOne)
+                        {
                             outputDisplay.Add("_");
-                        //if (durrrdleWordCharTwo == userGuessCharTwo)
-                        //    outputDisplay.Add(durrrdleWordCharTwo);
-                        //if (durrrdleWordCharTwo != userGuessCharTwo)
-                        //    outputDisplay.Add("_");
+                        }
+                        if (durrrdleWordCharTwo == userGuessCharTwo)
+                        {
+                            outputDisplay.Add(durrrdleWordCharTwo);
+                        }
+                        if (durrrdleWordCharTwo != userGuessCharTwo)
+                        {
+                            outputDisplay.Add("_");
+                        }
+                        if (durrrdleWordCharThree == userGuessCharThree)
+                        {
+                            outputDisplay.Add(durrrdleWordCharThree);
+                        }
+                        if (durrrdleWordCharThree != userGuessCharThree)
+                        {
+                            outputDisplay.Add("_");
+                        }
                     }
-                    foreach (var item in outputDisplay) 
+                    foreach (var item in outputDisplay)
                     {
-                        Console.WriteLine("");
-                        Console.WriteLine(" " + item);
+                        Console.Write($"{item} ");
                     }
+                    Console.WriteLine("");
                     return true;
+                }
             }
         }
     }
