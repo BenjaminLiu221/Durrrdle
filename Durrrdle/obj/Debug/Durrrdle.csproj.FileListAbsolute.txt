@@ -1,0 +1,16 @@
+C:\Users\benja\Documents\Projects\CSharpFundamentals\Durrrdle\Durrrdle\obj\Debug\Durrrdle.csproj.AssemblyReference.cache
+C:\Users\benja\Documents\Projects\CSharpFundamentals\Durrrdle\Durrrdle\obj\Debug\Durrrdle.csproj.SuggestedBindingRedirects.cache
+C:\Users\benja\Documents\Projects\CSharpFundamentals\Durrrdle\Durrrdle\obj\Debug\Durrrdle.csproj.CoreCompileInputs.cache
+C:\Users\benja\Documents\Projects\CSharpFundamentals\Durrrdle\Durrrdle\bin\Debug\Durrrdle.exe.config
+C:\Users\benja\Documents\Projects\CSharpFundamentals\Durrrdle\Durrrdle\bin\Debug\Durrrdle.exe
+C:\Users\benja\Documents\Projects\CSharpFundamentals\Durrrdle\Durrrdle\bin\Debug\Durrrdle.pdb
+C:\Users\benja\Documents\Projects\CSharpFundamentals\Durrrdle\Durrrdle\obj\Debug\Durrrdle.exe
+C:\Users\benja\Documents\Projects\CSharpFundamentals\Durrrdle\Durrrdle\obj\Debug\Durrrdle.pdb
+C:\Users\benja\Documents\Projects\Durrrdle\Durrrdle\bin\Debug\Durrrdle.exe.config
+C:\Users\benja\Documents\Projects\Durrrdle\Durrrdle\bin\Debug\Durrrdle.exe
+C:\Users\benja\Documents\Projects\Durrrdle\Durrrdle\bin\Debug\Durrrdle.pdb
+C:\Users\benja\Documents\Projects\Durrrdle\Durrrdle\obj\Debug\Durrrdle.csproj.AssemblyReference.cache
+C:\Users\benja\Documents\Projects\Durrrdle\Durrrdle\obj\Debug\Durrrdle.csproj.SuggestedBindingRedirects.cache
+C:\Users\benja\Documents\Projects\Durrrdle\Durrrdle\obj\Debug\Durrrdle.csproj.CoreCompileInputs.cache
+C:\Users\benja\Documents\Projects\Durrrdle\Durrrdle\obj\Debug\Durrrdle.exe
+C:\Users\benja\Documents\Projects\Durrrdle\Durrrdle\obj\Debug\Durrrdle.pdb

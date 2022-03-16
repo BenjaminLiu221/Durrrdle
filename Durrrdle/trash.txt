@@ -1,0 +1,64 @@
+                    //if (userGuess != durrrdleWord)
+                    //    if (durrrdleWordCharOne == userGuessCharOne && durrrdleWordCharTwo == userGuessCharTwo && durrrdleWordCharThree != userGuessCharThree)
+                    //        // X X _
+
+                    //        Console.WriteLine(durrrdleWordCharOne + " " + durrrdleWordCharTwo + " _");
+                    //    Console.WriteLine("");
+                    //    Console.WriteLine("Wow. Good guess, rookie. That is incorrect. Please try again.");
+                    //    Console.WriteLine("");
+                    //    Console.WriteLine("");
+                    //    Console.WriteLine("");
+                    //    return true;
+
+                //if (durrrdleWordCharOne == userGuessCharOne && durrrdleWordCharTwo != userGuessCharTwo && durrrdleWordCharThree != userGuessCharThree)
+                //    // X _ _
+                //    Console.WriteLine(durrrdleWordCharOne + " _ _");
+                //    Console.WriteLine("");
+                //    Console.WriteLine("Not a bad guess, but you still bad. That is incorrect. Please try again.");
+                //    Console.WriteLine("");
+                //    Console.WriteLine("");
+                //    Console.WriteLine("");
+                //return true;
+
+                //if (durrrdleWordCharOne != userGuessCharOne && durrrdleWordCharTwo == userGuessCharTwo && durrrdleWordCharThree != userGuessCharThree)
+                //    // _ X _
+                //    Console.WriteLine("_ " + durrrdleWordCharTwo + " _");
+                //    Console.WriteLine("");
+                //    Console.WriteLine("I mean not bad... I guess. That is incorrect. Please try again.");
+                //    Console.WriteLine("");
+                //    Console.WriteLine("");
+                //    Console.WriteLine("");
+                //return true;
+
+
+                //if (durrrdleWordCharOne == userGuessCharOne && durrrdleWordCharTwo != userGuessCharTwo && durrrdleWordCharThree == userGuessCharThree)
+                // X _ X
+
+                //    Console.WriteLine(durrrdleWordCharOne + " _ " + durrrdleWordCharThree);
+                //Console.WriteLine("You're terrible.");
+                //Console.WriteLine("");
+                //Console.WriteLine("That is incorrect. Please try again.");
+                //Console.WriteLine("");
+                //Console.WriteLine("");
+                //Console.WriteLine("");
+                //return true;
+
+                //if (durrrdleWordCharOne != userGuessCharOne && durrrdleWordCharTwo == userGuessCharTwo && durrrdleWordCharThree == userGuessCharThree)
+                //    // _ X X
+                //    Console.WriteLine("_ " + durrrdleWordCharTwo + " " + durrrdleWordCharThree);
+                //    Console.WriteLine("");
+                //    Console.WriteLine("That is incorrect. Please try again.");
+                //    Console.WriteLine("");
+                //    Console.WriteLine("");
+                //    Console.WriteLine("");
+                //    return true;
+
+                //if (durrrdleWordCharOne != userGuessCharOne && durrrdleWordCharTwo != userGuessCharTwo && durrrdleWordCharThree == userGuessCharThree)
+                //    // _ _ X
+                //    Console.WriteLine("_ _ " + durrrdleWordCharThree);
+                //    Console.WriteLine("");
+                //    Console.WriteLine("That is incorrect. Please try again.");
+                //    Console.WriteLine("");
+                //    Console.WriteLine("");
+                //    Console.WriteLine("");
+                //    return true;
