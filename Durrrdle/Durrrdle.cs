@@ -33,16 +33,16 @@ namespace Durrrdle
                 if (userGuess == durrrdleWord)
                     return false;
                 if (userGuess != durrrdleWord)
-                    for (int i = 0; i < 2; i++)
+                    for (int i = 0; i < 1; i++)
                     {
                         if (durrrdleWordCharOne == userGuessCharOne)
                             outputDisplay.Add(durrrdleWordCharOne);
                         if (durrrdleWordCharOne != userGuessCharOne)
                             outputDisplay.Add("_");
-                        if (durrrdleWordCharTwo == userGuessCharTwo)
-                            outputDisplay.Add(durrrdleWordCharTwo);
-                        if (durrrdleWordCharTwo != userGuessCharTwo)
-                            outputDisplay.Add("_");
+                        //if (durrrdleWordCharTwo == userGuessCharTwo)
+                        //    outputDisplay.Add(durrrdleWordCharTwo);
+                        //if (durrrdleWordCharTwo != userGuessCharTwo)
+                        //    outputDisplay.Add("_");
                     }
                     foreach (var item in outputDisplay) 
                     {
