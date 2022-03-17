@@ -7,7 +7,18 @@ namespace Durrrdle
     {
         public static bool GuessAgainOrNo(string response)
         {
-            //create var to guess
+            //create durrrdle to guess
+
+            //ArrayList generateDurrrdle;
+            //generateDurrrdle = new ArrayList();
+            //for (int i = 0; i < 3; i++)
+            //{
+            //    Random rand = new Random();
+            //    char randomChar = (char)rand.Next('a', 'z');
+            //    generateDurrrdle.Add(randomChar);
+            //}
+            //var durrrdleWord = generateDurrrdle;
+
             var durrrdleWord = "lol";
 
             //character index
@@ -18,6 +29,9 @@ namespace Durrrdle
             //create loop to guess again
             //display char if correct char in correct index
             //if statements for char check
+            //validate input
+            //display letter bank
+            //generate random 3 letters to guess
 
             string userGuess;
             while (true)

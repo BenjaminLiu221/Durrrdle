@@ -10,7 +10,6 @@ namespace Durrrdle
             Console.WriteLine("_ _ _");
             Console.WriteLine("");
             Console.WriteLine("");
-            Console.WriteLine("");
 
             //proc loop
             bool guessAgain = true;
