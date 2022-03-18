@@ -29,8 +29,17 @@ namespace Durrrdle2._0
             var letterBankValueOne = "a";
             var letterBankValueTwo = "b";
             var letterBankValueThree = "c";
-            Console.WriteLine($"Letter Bank: {letterBankValueOne} {letterBankValueTwo} {letterBankValueThree}");
+
+            Console.WriteLine("Letter Bank: ");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.Write($"{letterBankValueOne} ");
+            Console.Write($"{letterBankValueTwo} ");
+            Console.Write($"{letterBankValueThree}");
+            Console.ResetColor();
             Console.WriteLine("");
+            Console.WriteLine("");
+
+            //create logic to turn color of letter from letter bank if not correct
 
             //proc loop to guess again
             //validate input and provide response
@@ -92,7 +101,14 @@ namespace Durrrdle2._0
                         Console.Write($"{item} ");
                     }
                     Console.WriteLine("");
-                    Console.WriteLine($"Letter Bank: {letterBankValueOne} {letterBankValueTwo} {letterBankValueThree}");
+                    Console.WriteLine("");
+                    Console.WriteLine("Letter Bank: ");
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.Write($"{letterBankValueOne} ");
+                    Console.Write($"{letterBankValueTwo} ");
+                    Console.Write($"{letterBankValueThree}");
+                    Console.ResetColor();
+                    Console.WriteLine("");
                     Console.WriteLine("");
                 }
             }
