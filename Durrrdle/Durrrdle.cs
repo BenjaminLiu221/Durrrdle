@@ -7,17 +7,16 @@ namespace Durrrdle
     {
         public static bool GuessAgainOrNo(string response)
         {
-            //create durrrdle to guess
+            //generate random durrrdle to guess
 
-            //ArrayList generateDurrrdle;
-            //generateDurrrdle = new ArrayList();
+            //var durrrdleWord = "";
+
             //for (int i = 0; i < 3; i++)
             //{
             //    Random rand = new Random();
             //    char randomChar = (char)rand.Next('a', 'z');
-            //    generateDurrrdle.Add(randomChar);
+            //    durrrdleWord = $"{durrrdleWord}{randomChar}";
             //}
-            //var durrrdleWord = generateDurrrdle;
 
             var durrrdleWord = "lol";
 
@@ -31,7 +30,6 @@ namespace Durrrdle
             //if statements for char check
             //validate input
             //display letter bank
-            //generate random 3 letters to guess
 
             string userGuess;
             while (true)
