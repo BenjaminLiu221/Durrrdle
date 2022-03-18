@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Durrrdle
+namespace Durrrdle2._0
 {
     class Program
     {
@@ -9,15 +9,12 @@ namespace Durrrdle
             Console.WriteLine("Welcome to Durrrdle! You will be guessing the three letter word. Please enter the three letters and then press Enter.");
             Console.WriteLine("_ _ _");
             Console.WriteLine("");
-            Console.WriteLine("");
 
-            //proc loop
-            bool guessAgain = true;
-            while (guessAgain)
-            {
-                guessAgain = Durrrdle.GuessAgainOrNo("");
-            }
-            Console.WriteLine("You guessed the Durrrdle. Thank you for playing!");
+            //make new instance of class Durrrdle aka make new object of type Durrrdle
+            Durrrdle durrrdleWord = new Durrrdle();
+
+            //call method(s) of object durrrdle
+            durrrdleWord.GenerateDurrrdle();
         }
     }
 }

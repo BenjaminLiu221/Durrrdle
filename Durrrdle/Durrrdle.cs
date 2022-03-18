@@ -1,42 +1,48 @@
 ﻿using System;
 using System.Collections;
 
-namespace Durrrdle
+namespace Durrrdle2._0
 {
     class Durrrdle
     {
-        public static bool GuessAgainOrNo(string response)
+        public void GenerateDurrrdle()
         {
             //generate random durrrdle to guess
+            var durrrdleWord = "";
+            Random rand = new Random();
 
-            //var durrrdleWord = "";
+            for (int i = 0; i < 3; i++)
+            {
+                char randomChar = (char)rand.Next('a', 'c');
+                durrrdleWord = $"{durrrdleWord}{randomChar}";
+            }
 
-            //for (int i = 0; i < 3; i++)
-            //{
-            //    Random rand = new Random();
-            //    char randomChar = (char)rand.Next('a', 'z');
-            //    durrrdleWord = $"{durrrdleWord}{randomChar}";
-            //}
+            //print durrrdleWord as a sanity check
+            Console.WriteLine(durrrdleWord);
+            Console.WriteLine("");
 
-            var durrrdleWord = "lol";
-
-            //character index
             var durrrdleWordCharOne = durrrdleWord.ToCharArray()[0];
             var durrrdleWordCharTwo = durrrdleWord.ToCharArray()[1];
             var durrrdleWordCharThree = durrrdleWord.ToCharArray()[2];
 
-            //create loop to guess again
-            //display char if correct char in correct index
-            //if statements for char check
-            //validate input
             //display letter bank
+            var letterBankValueOne = "a";
+            var letterBankValueTwo = "b";
+            var letterBankValueThree = "c";
+            Console.WriteLine($"Letter Bank: {letterBankValueOne} {letterBankValueTwo} {letterBankValueThree}");
+            Console.WriteLine("");
 
+            //proc loop to guess again
+            //validate input and provide response
             string userGuess;
             while (true)
             {
                 userGuess = Console.ReadLine();
-
                 int userGuessLength = userGuess.Length;
+
+                var userGuessCharOne = userGuess.ToCharArray()[0];
+                var userGuessCharTwo = userGuess.ToCharArray()[1];
+                var userGuessCharThree = userGuess.ToCharArray()[2];
 
                 ArrayList outputDisplay;
                 outputDisplay = new ArrayList();
@@ -44,17 +50,15 @@ namespace Durrrdle
                 if (userGuessLength != 3)
                 {
                     Console.WriteLine("That is not a valid guess. Please enter the three letters and then press Enter.");
-                    return true;
                 }
+                //Console.WriteLine(durrrdleWord);
                 if (userGuess == durrrdleWord)
                 {
-                    return false;
+                    Console.WriteLine("You have guessed the Durrrdle. Thank you for playing!");
+                    return;
                 }
                 if (userGuess != durrrdleWord)
                 {
-                    var userGuessCharOne = userGuess.ToCharArray()[0];
-                    var userGuessCharTwo = userGuess.ToCharArray()[1];
-                    var userGuessCharThree = userGuess.ToCharArray()[2];
                     for (int i = 0; i < 1; i++)
                     {
                         if (durrrdleWordCharOne == userGuessCharOne)
@@ -82,12 +86,14 @@ namespace Durrrdle
                             outputDisplay.Add("_");
                         }
                     }
+                    Console.WriteLine("");
                     foreach (var item in outputDisplay)
                     {
                         Console.Write($"{item} ");
                     }
                     Console.WriteLine("");
-                    return true;
+                    Console.WriteLine($"Letter Bank: {letterBankValueOne} {letterBankValueTwo} {letterBankValueThree}");
+                    Console.WriteLine("");
                 }
             }
         }
