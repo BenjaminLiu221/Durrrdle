@@ -6,7 +6,7 @@ namespace Durrrdle2._0
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Durrrdle! You will be guessing the three letter word. Please enter the three letters and then press Enter.");
+            Console.WriteLine("Welcome to Durrrdle! You will be guessing the three letter Durrrdle. Please enter three letters and then press Enter.");
             Console.WriteLine("_ _ _");
             Console.WriteLine("");
 

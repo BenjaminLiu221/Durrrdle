@@ -51,68 +51,94 @@ namespace Durrrdle2._0
 
                 ArrayList outputDisplay;
                 outputDisplay = new ArrayList();
-                
+
+                int containNumberCount = 0;
+
                 //Console.WriteLine(durrrdleWord);
                 if (userGuess == durrrdleWord)
                 {
                     Console.WriteLine("You have guessed the Durrrdle. Thank you for playing!");
                     return;
                 }
-                if (userGuess != durrrdleWord)
+                //userinput character validation. do not print output display if validation failed
+                if (userGuessLength == 3)
                 {
-                    if (userGuessLength == 3)
+                    bool containNumber = false;
+                    for (int i = 0; i < userGuess.Length; i++)
                     {
-                        var userGuessCharOne = userGuess.ToCharArray()[0];
-                        var userGuessCharTwo = userGuess.ToCharArray()[1];
-                        var userGuessCharThree = userGuess.ToCharArray()[2];
-
-                        for (int i = 0; i < 1; i++)
+                        if (char.IsDigit(userGuess[i]))
                         {
-                            if (durrrdleWordCharOne == userGuessCharOne)
+                            containNumber = true;
+                            if (containNumber)
                             {
-                                outputDisplay.Add(durrrdleWordCharOne);
-                            }
-                            if (durrrdleWordCharOne != userGuessCharOne)
-                            {
-                                outputDisplay.Add("_");
-                            }
-                            if (durrrdleWordCharTwo == userGuessCharTwo)
-                            {
-                                outputDisplay.Add(durrrdleWordCharTwo);
-                            }
-                            if (durrrdleWordCharTwo != userGuessCharTwo)
-                            {
-                                outputDisplay.Add("_");
-                            }
-                            if (durrrdleWordCharThree == userGuessCharThree)
-                            {
-                                outputDisplay.Add(durrrdleWordCharThree);
-                            }
-                            if (durrrdleWordCharThree != userGuessCharThree)
-                            {
-                                outputDisplay.Add("_");
+                                containNumberCount++;
                             }
                         }
                     }
-                    Console.WriteLine("");
-                    foreach (var item in outputDisplay)
+                    if (containNumberCount > 0)
                     {
-                        Console.Write($"{item} ");
+                        Console.WriteLine("That is not a valid guess. Your input contains a number. Please enter three letters and then press Enter.");
                     }
-                    Console.WriteLine("");
-                    Console.WriteLine("");
-                    Console.WriteLine("Letter Bank: ");
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write($"{letterBankValueOne} ");
-                    Console.Write($"{letterBankValueTwo} ");
-                    Console.Write($"{letterBankValueThree}");
-                    Console.ResetColor();
-                    Console.WriteLine("");
-                    Console.WriteLine("");
                 }
+                //userinput length validation. do not print output display if validation failed
                 if (userGuessLength != 3)
                 {
-                    Console.WriteLine("That is not a valid guess. Please enter the three letters and then press Enter.");
+                    Console.WriteLine("That is not a valid guess. Please enter three letters and then press Enter.");
+                }
+                if (userGuess != durrrdleWord)
+                {
+                    if (containNumberCount < 1)
+                    {
+                        if (userGuessLength == 3)
+                        {
+                            var userGuessCharOne = userGuess.ToCharArray()[0];
+                            var userGuessCharTwo = userGuess.ToCharArray()[1];
+                            var userGuessCharThree = userGuess.ToCharArray()[2];
+
+                            for (int i = 0; i < 1; i++)
+                            {
+                                if (durrrdleWordCharOne == userGuessCharOne)
+                                {
+                                    outputDisplay.Add(durrrdleWordCharOne);
+                                }
+                                if (durrrdleWordCharOne != userGuessCharOne)
+                                {
+                                    outputDisplay.Add("_");
+                                }
+                                if (durrrdleWordCharTwo == userGuessCharTwo)
+                                {
+                                    outputDisplay.Add(durrrdleWordCharTwo);
+                                }
+                                if (durrrdleWordCharTwo != userGuessCharTwo)
+                                {
+                                    outputDisplay.Add("_");
+                                }
+                                if (durrrdleWordCharThree == userGuessCharThree)
+                                {
+                                    outputDisplay.Add(durrrdleWordCharThree);
+                                }
+                                if (durrrdleWordCharThree != userGuessCharThree)
+                                {
+                                    outputDisplay.Add("_");
+                                }
+                            }
+                        }
+                        Console.WriteLine("");
+                        foreach (var item in outputDisplay)
+                        {
+                            Console.Write($"{item} ");
+                        }
+                        Console.WriteLine("");
+                        Console.WriteLine("");
+                        Console.WriteLine("Letter Bank: ");
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.Write($"{letterBankValueOne} ");
+                        Console.Write($"{letterBankValueTwo} ");
+                        Console.Write($"{letterBankValueThree}");
+                        Console.ResetColor();
+                        Console.WriteLine("");
+                        Console.WriteLine("");
+                    }
                 }
             }
         }
