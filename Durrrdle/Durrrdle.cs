@@ -49,8 +49,10 @@ namespace Durrrdle2._0
                 userGuess = Console.ReadLine();
                 int userGuessLength = userGuess.Length;
 
-                ArrayList outputDisplay;
-                outputDisplay = new ArrayList();
+                //ArrayList outputDisplay;
+                //outputDisplay = new ArrayList();
+
+                string outputDisplay = "";
 
                 int containNumberCount = 0;
 
@@ -83,51 +85,85 @@ namespace Durrrdle2._0
                 //userinput length validation. do not print output display if validation failed
                 if (userGuessLength != 3)
                 {
-                    Console.WriteLine("That is not a valid guess. Please enter three letters and then press Enter.");
+                    Console.WriteLine("That is not a valid guess. Please enter only three letters and then press Enter.");
                 }
+                //index userinput
+                //retain character if it matches to a character of that index and display forever
                 if (userGuess != durrrdleWord)
                 {
                     if (containNumberCount < 1)
                     {
+                        var userGuessCharOne = userGuess.ToCharArray()[0];
+                        var userGuessCharTwo = userGuess.ToCharArray()[1];
+                        var userGuessCharThree = userGuess.ToCharArray()[2];
+
+                        char outputDisplayCharOne;
+                        char outputDisplayCharTwo;
+                        char outputDisplayCharThree;
+
+                        var outputDisplayCharOneToString = "";
+                        var outputDisplayCharTwoToString = "";
+                        var outputDisplayCharThreeToString = "";
+
                         if (userGuessLength == 3)
                         {
-                            var userGuessCharOne = userGuess.ToCharArray()[0];
-                            var userGuessCharTwo = userGuess.ToCharArray()[1];
-                            var userGuessCharThree = userGuess.ToCharArray()[2];
-
                             for (int i = 0; i < 1; i++)
                             {
                                 if (durrrdleWordCharOne == userGuessCharOne)
                                 {
-                                    outputDisplay.Add(durrrdleWordCharOne);
+                                    outputDisplay = String.Concat(outputDisplay, userGuessCharOne);
                                 }
                                 if (durrrdleWordCharOne != userGuessCharOne)
                                 {
-                                    outputDisplay.Add("_");
+                                    outputDisplay = String.Concat(outputDisplay, "_");
                                 }
                                 if (durrrdleWordCharTwo == userGuessCharTwo)
                                 {
-                                    outputDisplay.Add(durrrdleWordCharTwo);
+                                    outputDisplay = String.Concat(outputDisplay, " ", userGuessCharTwo);
                                 }
                                 if (durrrdleWordCharTwo != userGuessCharTwo)
                                 {
-                                    outputDisplay.Add("_");
+                                    outputDisplay = String.Concat(outputDisplay, " _");
                                 }
                                 if (durrrdleWordCharThree == userGuessCharThree)
                                 {
-                                    outputDisplay.Add(durrrdleWordCharThree);
+                                    outputDisplay = String.Concat(outputDisplay, " ", userGuessCharThree);
                                 }
                                 if (durrrdleWordCharThree != userGuessCharThree)
                                 {
-                                    outputDisplay.Add("_");
+                                    outputDisplay = String.Concat(outputDisplay, " _");
                                 }
+
+                                //if (durrrdleWordCharOne == userGuessCharOne)
+                                //{
+                                //    outputDisplayCharOneToString = userGuessCharOne.ToString();
+                                //}
+                                //if (durrrdleWordCharOne != userGuessCharOne)
+                                //{
+                                //    outputDisplayCharOneToString = " _";
+                                //}
+                                //if (durrrdleWordCharTwo == userGuessCharTwo)
+                                //{
+                                //    outputDisplayCharTwoToString = userGuessCharTwo.ToString();
+                                //}
+                                //if (durrrdleWordCharTwo != userGuessCharTwo)
+                                //{
+                                //    outputDisplayCharTwoToString = " _";
+                                //}
+                                //if (durrrdleWordCharThree == userGuessCharThree)
+                                //{
+                                //    outputDisplayCharThreeToString = userGuessCharThree.ToString();
+                                //}
+                                //if (durrrdleWordCharThree != userGuessCharThree)
+                                //{
+                                //    outputDisplayCharThreeToString = " _";
+                                //}
+
                             }
                         }
                         Console.WriteLine("");
-                        foreach (var item in outputDisplay)
-                        {
-                            Console.Write($"{item} ");
-                        }
+                        Console.WriteLine(outputDisplay);
+
                         Console.WriteLine("");
                         Console.WriteLine("");
                         Console.WriteLine("Letter Bank: ");
