@@ -44,6 +44,11 @@ namespace Durrrdle2._0
             //proc loop to guess again
             //validate input and provide response
 
+            //string outputDisplay = "";
+            string testOutputCharOneDisplay = "_";
+            string testOutputCharTwoDisplay = "_";
+            string testOutputCharThreeDisplay = "_";
+
             while (true)
             {
                 string userGuess;
@@ -51,6 +56,7 @@ namespace Durrrdle2._0
                 int userGuessLength = userGuess.Length;
 
                 string outputDisplay = "";
+
 
                 int containNumberCount = 0;
 
@@ -143,10 +149,33 @@ namespace Durrrdle2._0
                                     outputDisplay = String.Concat(outputDisplay, " ", outputDisplayCharThreeToString);
                                 }
                             }
+                            if (testOutputCharOneDisplay == "_")
+                            {
+                                if (outputDisplayCharOneToString != "_")
+                                {
+                                    testOutputCharOneDisplay = outputDisplayCharOneToString;
+                                }
+                            }
+                            if (testOutputCharTwoDisplay == "_")
+                            {
+                                if (outputDisplayCharTwoToString != "_")
+                                {
+                                    testOutputCharTwoDisplay = outputDisplayCharTwoToString;
+                                }
+                            }
+                            if (testOutputCharThreeDisplay == "_")
+                            {
+                                if (outputDisplayCharThreeToString != "_")
+                                {
+                                    testOutputCharThreeDisplay = outputDisplayCharThreeToString;
+                                }
+                            }
                         }
+
                         Console.WriteLine("");
                         Console.WriteLine("Correct Character Count: " + correctCharCount);
-                        Console.WriteLine(outputDisplay);
+                        Console.WriteLine($"outputDisplay: { outputDisplay}");
+                        Console.WriteLine($"testOutputDisplay: {testOutputCharOneDisplay} {testOutputCharTwoDisplay} {testOutputCharThreeDisplay}");
 
                         Console.WriteLine("");
                         Console.WriteLine("");
