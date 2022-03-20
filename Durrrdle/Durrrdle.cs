@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Text.RegularExpressions;
 
 namespace Durrrdle2._0
 {
@@ -26,6 +27,7 @@ namespace Durrrdle2._0
             var durrrdleWordCharThree = durrrdleWord.ToCharArray()[2];
 
             //display letter bank
+            //update word bank to utilize recursive logic
             var letterBankValueOne = "a";
             var letterBankValueTwo = "b";
             var letterBankValueThree = "c";
@@ -39,10 +41,7 @@ namespace Durrrdle2._0
             Console.WriteLine("");
             Console.WriteLine("");
 
-            //create logic to turn color of letter from letter bank if not correct
-
             //proc loop to guess again
-            //validate input and provide response
 
             //string outputDisplay = "";
             string testOutputCharOneDisplay = "_";
@@ -63,6 +62,7 @@ namespace Durrrdle2._0
                 int correctCharCount = 0;
 
                 //Console.WriteLine(durrrdleWord);
+                //implement try catch exception for cleaner error handling
                 if (userGuess == durrrdleWord)
                 {
                     Console.WriteLine("You have guessed the Durrrdle. Thank you for playing!");
@@ -87,8 +87,17 @@ namespace Durrrdle2._0
                     {
                         Console.WriteLine("That is not a valid guess. Your input contains a number. Please enter three letters and then press Enter.");
                     }
+                    bool containSpecialCharacter;
+                    //initialize new object of type Regex
+                    Regex RgxUrl = new Regex("[^a-z0-9]");
+                    containSpecialCharacter = RgxUrl.IsMatch(userGuess);
+                    if (containSpecialCharacter = true)
+                    {
+                        Console.WriteLine("That is not a valid guess. Your input contains a special character. Please enter three letters and then press Enter.");
+                    }
                 }
                 //userinput length validation. do not print output display if validation failed
+                //implement try catch exception for cleaner error handling
                 if (userGuessLength != 3)
                 {
                     Console.WriteLine("That is not a valid guess. Please enter only three letters and then press Enter.");
@@ -149,6 +158,7 @@ namespace Durrrdle2._0
                                     outputDisplay = String.Concat(outputDisplay, " ", outputDisplayCharThreeToString);
                                 }
                             }
+                            //logic to store correct character of durrrdleWord
                             if (testOutputCharOneDisplay == "_")
                             {
                                 if (outputDisplayCharOneToString != "_")
@@ -173,8 +183,11 @@ namespace Durrrdle2._0
                         }
 
                         Console.WriteLine("");
+                        //display character count for troubleshooting
                         Console.WriteLine("Correct Character Count: " + correctCharCount);
-                        Console.WriteLine($"outputDisplay: { outputDisplay}");
+                        //display userinput
+                        Console.WriteLine($"userInputDisplay: { outputDisplay}");
+                        //display output
                         Console.WriteLine($"testOutputDisplay: {testOutputCharOneDisplay} {testOutputCharTwoDisplay} {testOutputCharThreeDisplay}");
 
                         Console.WriteLine("");
