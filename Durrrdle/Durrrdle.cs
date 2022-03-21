@@ -100,6 +100,7 @@ namespace Durrrdle2._0
                 if (userGuessLength != 3)
                 {
                     Console.WriteLine("That is not a valid guess. Please enter only three letters and then press Enter.");
+                    Console.WriteLine("");
                 }
                 //index userinput
                 //retain character if it matches to a character of that index and display forever
@@ -112,10 +113,6 @@ namespace Durrrdle2._0
                             var userGuessCharOne = userGuess.ToCharArray()[0];
                             var userGuessCharTwo = userGuess.ToCharArray()[1];
                             var userGuessCharThree = userGuess.ToCharArray()[2];
-
-                            char outputDisplayCharOne;
-                            char outputDisplayCharTwo;
-                            char outputDisplayCharThree;
 
                             var outputDisplayCharOneToString = "";
                             var outputDisplayCharTwoToString = "";
@@ -182,28 +179,27 @@ namespace Durrrdle2._0
                                     }
                                 }
                             }
-
-                            Console.WriteLine("");
-                            //display character count for troubleshooting
-                            Console.WriteLine("Correct Character Count: " + correctCharCount);
-                            //display userinput
-                            Console.WriteLine($"userInputDisplay: { outputDisplay}");
-                            //display output
-                            Console.WriteLine($"testOutputDisplay: {testOutputCharOneDisplay} {testOutputCharTwoDisplay} {testOutputCharThreeDisplay}");
-
-                            Console.WriteLine("");
-                            Console.WriteLine("");
-                            Console.WriteLine("Letter Bank: ");
-                            Console.ForegroundColor = ConsoleColor.Yellow;
-                            Console.Write($"{letterBankValueOne} ");
-                            Console.Write($"{letterBankValueTwo} ");
-                            Console.Write($"{letterBankValueThree}");
-                            Console.ResetColor();
-                            Console.WriteLine("");
-                            Console.WriteLine("");
                         }
                     }
                 }
+                Console.WriteLine("");
+                //display character count for troubleshooting
+                Console.WriteLine("Correct Character Count: " + correctCharCount);
+                //display userinput
+                Console.WriteLine($"userInputDisplay: { outputDisplay}");
+                //display output
+                Console.WriteLine($"testOutputDisplay: {testOutputCharOneDisplay} {testOutputCharTwoDisplay} {testOutputCharThreeDisplay}");
+
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("Letter Bank: ");
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.Write($"{letterBankValueOne} ");
+                Console.Write($"{letterBankValueTwo} ");
+                Console.Write($"{letterBankValueThree}");
+                Console.ResetColor();
+                Console.WriteLine("");
+                Console.WriteLine("");
             }
         }
     }
