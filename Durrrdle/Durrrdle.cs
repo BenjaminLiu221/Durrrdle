@@ -90,7 +90,7 @@ namespace Durrrdle2._0
                     //initialize new object of type Regex
                     Regex RgxUrl = new Regex("[^a-z0-9]");
                     containSpecialCharacter = RgxUrl.IsMatch(userGuess);
-                    if (containSpecialCharacter = true)
+                    if (containSpecialCharacter == true)
                     {
                         Console.WriteLine("That is not a valid guess. Your input contains a special character. Please enter three letters and then press Enter.");
                     }
