@@ -26,7 +26,7 @@ namespace Durrrdle2._0
             var durrrdleWordCharTwo = durrrdleWord.ToCharArray()[1];
             var durrrdleWordCharThree = durrrdleWord.ToCharArray()[2];
 
-            //display letter bank
+            //display letter banks
             //update word bank to utilize recursive logic
             var letterBankValueOne = "a";
             var letterBankValueTwo = "b";
@@ -56,9 +56,11 @@ namespace Durrrdle2._0
 
                 string outputDisplay = "";
 
+                int correctCharCount = 0;
+
                 int containNumberCount = 0;
 
-                int correctCharCount = 0;
+                int containSpecialCharCount = 0;
 
                 //Console.WriteLine(durrrdleWord);
                 //implement try catch exception for cleaner error handling
@@ -70,7 +72,7 @@ namespace Durrrdle2._0
                 //userinput character validation. do not print output display if validation failed
                 if (userGuessLength == 3)
                 {
-                    bool containNumber = false;
+                    bool containNumber;
                     for (int i = 0; i < userGuess.Length; i++)
                     {
                         if (char.IsDigit(userGuess[i]))
@@ -90,8 +92,9 @@ namespace Durrrdle2._0
                     //initialize new object of type Regex
                     Regex RgxUrl = new Regex("[^a-z0-9]");
                     containSpecialCharacter = RgxUrl.IsMatch(userGuess);
-                    if (containSpecialCharacter == true)
+                    if (containSpecialCharacter)
                     {
+                        containSpecialCharCount = 1;
                         Console.WriteLine("That is not a valid guess. Your input contains a special character. Please enter three letters and then press Enter.");
                     }
                 }
@@ -108,74 +111,79 @@ namespace Durrrdle2._0
                 {
                     if (userGuess != durrrdleWord)
                     {
-                        if (containNumberCount < 1)
+                        if (containNumberCount == 0)
                         {
-                            var userGuessCharOne = userGuess.ToCharArray()[0];
-                            var userGuessCharTwo = userGuess.ToCharArray()[1];
-                            var userGuessCharThree = userGuess.ToCharArray()[2];
-
-                            var outputDisplayCharOneToString = "";
-                            var outputDisplayCharTwoToString = "";
-                            var outputDisplayCharThreeToString = "";
-
-                            if (userGuessLength == 3)
+                            if (containSpecialCharCount == 0)
                             {
-                                for (int i = 0; i < 1; i++)
                                 {
-                                    if (durrrdleWordCharOne == userGuessCharOne)
+                                    var userGuessCharOne = userGuess.ToCharArray()[0];
+                                    var userGuessCharTwo = userGuess.ToCharArray()[1];
+                                    var userGuessCharThree = userGuess.ToCharArray()[2];
+
+                                    var outputDisplayCharOneToString = "";
+                                    var outputDisplayCharTwoToString = "";
+                                    var outputDisplayCharThreeToString = "";
+
+                                    if (userGuessLength == 3)
                                     {
-                                        outputDisplayCharOneToString = userGuessCharOne.ToString();
-                                        outputDisplay = String.Concat(outputDisplay, outputDisplayCharOneToString);
-                                        correctCharCount++;
-                                    }
-                                    if (durrrdleWordCharOne != userGuessCharOne)
-                                    {
-                                        outputDisplayCharOneToString = "_";
-                                        outputDisplay = String.Concat(outputDisplay, outputDisplayCharOneToString);
-                                    }
-                                    if (durrrdleWordCharTwo == userGuessCharTwo)
-                                    {
-                                        outputDisplayCharTwoToString = userGuessCharTwo.ToString();
-                                        outputDisplay = String.Concat(outputDisplay, " ", outputDisplayCharTwoToString);
-                                        correctCharCount++;
-                                    }
-                                    if (durrrdleWordCharTwo != userGuessCharTwo)
-                                    {
-                                        outputDisplayCharTwoToString = "_";
-                                        outputDisplay = String.Concat(outputDisplay, " ", outputDisplayCharTwoToString);
-                                    }
-                                    if (durrrdleWordCharThree == userGuessCharThree)
-                                    {
-                                        outputDisplayCharThreeToString = userGuessCharThree.ToString();
-                                        outputDisplay = String.Concat(outputDisplay, outputDisplayCharThreeToString);
-                                        correctCharCount++;
-                                    }
-                                    if (durrrdleWordCharThree != userGuessCharThree)
-                                    {
-                                        outputDisplayCharThreeToString = "_";
-                                        outputDisplay = String.Concat(outputDisplay, " ", outputDisplayCharThreeToString);
-                                    }
-                                }
-                                //logic to store correct character of durrrdleWord
-                                if (testOutputCharOneDisplay == "_")
-                                {
-                                    if (outputDisplayCharOneToString != "_")
-                                    {
-                                        testOutputCharOneDisplay = outputDisplayCharOneToString;
-                                    }
-                                }
-                                if (testOutputCharTwoDisplay == "_")
-                                {
-                                    if (outputDisplayCharTwoToString != "_")
-                                    {
-                                        testOutputCharTwoDisplay = outputDisplayCharTwoToString;
-                                    }
-                                }
-                                if (testOutputCharThreeDisplay == "_")
-                                {
-                                    if (outputDisplayCharThreeToString != "_")
-                                    {
-                                        testOutputCharThreeDisplay = outputDisplayCharThreeToString;
+                                        for (int i = 0; i < 1; i++)
+                                        {
+                                            if (durrrdleWordCharOne == userGuessCharOne)
+                                            {
+                                                outputDisplayCharOneToString = userGuessCharOne.ToString();
+                                                outputDisplay = String.Concat(outputDisplay, outputDisplayCharOneToString);
+                                                correctCharCount++;
+                                            }
+                                            if (durrrdleWordCharOne != userGuessCharOne)
+                                            {
+                                                outputDisplayCharOneToString = "_";
+                                                outputDisplay = String.Concat(outputDisplay, outputDisplayCharOneToString);
+                                            }
+                                            if (durrrdleWordCharTwo == userGuessCharTwo)
+                                            {
+                                                outputDisplayCharTwoToString = userGuessCharTwo.ToString();
+                                                outputDisplay = String.Concat(outputDisplay, " ", outputDisplayCharTwoToString);
+                                                correctCharCount++;
+                                            }
+                                            if (durrrdleWordCharTwo != userGuessCharTwo)
+                                            {
+                                                outputDisplayCharTwoToString = "_";
+                                                outputDisplay = String.Concat(outputDisplay, " ", outputDisplayCharTwoToString);
+                                            }
+                                            if (durrrdleWordCharThree == userGuessCharThree)
+                                            {
+                                                outputDisplayCharThreeToString = userGuessCharThree.ToString();
+                                                outputDisplay = String.Concat(outputDisplay, outputDisplayCharThreeToString);
+                                                correctCharCount++;
+                                            }
+                                            if (durrrdleWordCharThree != userGuessCharThree)
+                                            {
+                                                outputDisplayCharThreeToString = "_";
+                                                outputDisplay = String.Concat(outputDisplay, " ", outputDisplayCharThreeToString);
+                                            }
+                                        }
+                                        //logic to store correct character of durrrdleWord
+                                        if (testOutputCharOneDisplay == "_")
+                                        {
+                                            if (outputDisplayCharOneToString != "_")
+                                            {
+                                                testOutputCharOneDisplay = outputDisplayCharOneToString;
+                                            }
+                                        }
+                                        if (testOutputCharTwoDisplay == "_")
+                                        {
+                                            if (outputDisplayCharTwoToString != "_")
+                                            {
+                                                testOutputCharTwoDisplay = outputDisplayCharTwoToString;
+                                            }
+                                        }
+                                        if (testOutputCharThreeDisplay == "_")
+                                        {
+                                            if (outputDisplayCharThreeToString != "_")
+                                            {
+                                                testOutputCharThreeDisplay = outputDisplayCharThreeToString;
+                                            }
+                                        }
                                     }
                                 }
                             }
