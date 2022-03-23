@@ -194,7 +194,7 @@ namespace Durrrdle2._0
                 //display character count for troubleshooting
                 Console.WriteLine("Correct Character Count: " + correctCharCount);
                 //display userinput
-                Console.WriteLine($"userInputDisplay: { outputDisplay}");
+                //Console.WriteLine($"userInputDisplay: { outputDisplay}");
                 //display output
                 Console.WriteLine($"testOutputDisplay: {testOutputCharOneDisplay} {testOutputCharTwoDisplay} {testOutputCharThreeDisplay}");
 
