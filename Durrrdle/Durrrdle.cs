@@ -48,6 +48,7 @@ namespace Durrrdle2._0
             string testOutputCharTwoDisplay = "_";
             string testOutputCharThreeDisplay = "_";
 
+            //need to change condition of this while loop to be more specific
             while (true)
             {
                 string userGuess;
@@ -99,7 +100,7 @@ namespace Durrrdle2._0
                     }
                 }
                 //userinput length validation. do not print output display if validation failed
-                //implement try catch exception for cleaner error handling
+                //implement try catch exception for cleaner error handling 
                 if (userGuessLength != 3)
                 {
                     Console.WriteLine("That is not a valid guess. Please enter only three letters and then press Enter.");
