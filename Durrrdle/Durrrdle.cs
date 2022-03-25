@@ -49,6 +49,7 @@ namespace Durrrdle2._0
             string testOutputCharThreeDisplay = "_";
 
             //need to change condition of this while loop to be more specific
+            //possibly add constructor and fields
             while (true)
             {
                 string userGuess;
