@@ -19,8 +19,8 @@ namespace Durrrdle2._0
             }
 
             //print durrrdleWord as a sanity check
-            Console.WriteLine(durrrdleWord);
-            Console.WriteLine("");
+            //Console.WriteLine(durrrdleWord);
+            //Console.WriteLine("");
 
             var durrrdleWordCharOne = durrrdleWord.ToCharArray()[0];
             var durrrdleWordCharTwo = durrrdleWord.ToCharArray()[1];
@@ -48,10 +48,21 @@ namespace Durrrdle2._0
             string testOutputCharTwoDisplay = "_";
             string testOutputCharThreeDisplay = "_";
 
-            //need to change condition of this while loop to be more specific
+            //declare guessAgain
+            bool guessAgain = true;
+
+            //quit after attempts remaining reaches 0
+            int guessAttemptsRemaining = 3;
+
             //possibly add constructor and fields
-            while (true)
+            while (guessAgain)
             {
+                if (guessAttemptsRemaining == 0)
+                {
+                    Console.WriteLine("You have 0 guesses remaining. Thank you for playing. Good bye!");
+                    return;
+                }
+
                 string userGuess;
                 userGuess = Console.ReadLine();
                 int userGuessLength = userGuess.Length;
@@ -118,6 +129,8 @@ namespace Durrrdle2._0
                             if (containSpecialCharCount == 0)
                             {
                                 {
+                                    guessAttemptsRemaining--;
+
                                     var userGuessCharOne = userGuess.ToCharArray()[0];
                                     var userGuessCharTwo = userGuess.ToCharArray()[1];
                                     var userGuessCharThree = userGuess.ToCharArray()[2];
@@ -192,14 +205,20 @@ namespace Durrrdle2._0
                         }
                     }
                 }
-                Console.WriteLine("");
                 //display character count for troubleshooting
-                Console.WriteLine("Correct Character Count: " + correctCharCount);
+                //Console.WriteLine("");
+                //Console.WriteLine("Correct Character Count: " + correctCharCount);
+
+                //display guessAttemptsRemaining
+                Console.WriteLine($"Guess Attempt(s) Remaining: {guessAttemptsRemaining}");
+
                 //display userinput
                 //Console.WriteLine($"userInputDisplay: { outputDisplay}");
-                //display output
-                Console.WriteLine($"testOutputDisplay: {testOutputCharOneDisplay} {testOutputCharTwoDisplay} {testOutputCharThreeDisplay}");
 
+                //display output
+                Console.WriteLine($"Progress: {testOutputCharOneDisplay} {testOutputCharTwoDisplay} {testOutputCharThreeDisplay}");
+
+                //display letter bank
                 Console.WriteLine("");
                 Console.WriteLine("");
                 Console.WriteLine("Letter Bank: ");
