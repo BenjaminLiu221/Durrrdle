@@ -63,8 +63,7 @@ namespace Durrrdle2._0
                     return;
                 }
 
-                string userGuess;
-                userGuess = Console.ReadLine();
+                string userGuess = Console.ReadLine();
                 int userGuessLength = userGuess.Length;
 
                 string outputDisplay = "";
