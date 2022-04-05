@@ -75,16 +75,22 @@ namespace Durrrdle2._0
 
                 int containSpecialCharCount = 0;
 
-                //Console.WriteLine(durrrdleWord);
-                //implement try catch exception for cleaner error handling
-                if (userGuess == durrrdleWord)
+                Console.WriteLine($"DurrrdleWord is: { durrrdleWord}");
+
+                //userinput length validation. do not print output display if validation failed
+                if (userGuessLength != 3)
                 {
-                    Console.WriteLine("You have guessed the Durrrdle. Thank you for playing!");
-                    return;
+                    Console.WriteLine("That is not a valid guess. Please enter only three letters and then press Enter.");
+                    Console.WriteLine("");
                 }
                 //userinput character validation. do not print output display if validation failed
                 if (userGuessLength == 3)
                 {
+                    if (userGuess == durrrdleWord)
+                    {
+                        Console.WriteLine("You have guessed the Durrrdle. Thank you for playing!");
+                        return;
+                    }
                     bool containNumber;
                     for (int i = 0; i < userGuess.Length; i++)
                     {
@@ -111,13 +117,7 @@ namespace Durrrdle2._0
                         Console.WriteLine("That is not a valid guess. Your input contains a special character. Please enter three letters and then press Enter.");
                     }
                 }
-                //userinput length validation. do not print output display if validation failed
-                //implement try catch exception for cleaner error handling 
-                if (userGuessLength != 3)
-                {
-                    Console.WriteLine("That is not a valid guess. Please enter only three letters and then press Enter.");
-                    Console.WriteLine("");
-                }
+
                 //index userinput
                 //retain character if it matches to a character of that index and display forever
                 if (userGuessLength == 3)
