@@ -223,6 +223,12 @@ namespace Durrrdle2._0
             }
         }
 
+        //public void BuildOutputDisplay(char durrrdleWordChar, char userGuessChar)
+        //{
+        //    if (durrrdleWordChar == userGuessChar)
+        //    {
 
+        //    }
+        //}
     }
 }
