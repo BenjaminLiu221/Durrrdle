@@ -137,9 +137,7 @@ namespace Durrrdle2._0
                 //display output
                 Console.WriteLine($"Progress: {testOutputCharOneDisplay} {testOutputCharTwoDisplay} {testOutputCharThreeDisplay}");
 
-
                 //display letter bank
-                Console.WriteLine("");
                 Console.WriteLine("");
                 Console.WriteLine("Letter Bank: ");
                 Console.ForegroundColor = ConsoleColor.Yellow;
