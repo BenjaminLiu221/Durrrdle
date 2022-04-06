@@ -14,7 +14,7 @@ namespace Durrrdle2._0
             Durrrdle durrrdleWord = new Durrrdle();
 
             //call method(s) of object durrrdle
-            durrrdleWord.GenerateDurrrdle();
+            durrrdleWord.BeginDurrrdle();
         }
     }
 }

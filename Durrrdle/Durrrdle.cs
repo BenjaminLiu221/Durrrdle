@@ -6,7 +6,7 @@ namespace Durrrdle2._0
 {
     class Durrrdle
     {
-        public void GenerateDurrrdle()
+        public void BeginDurrrdle()
         {
             //generate random durrrdle to guess
             var durrrdleWord = "";
@@ -18,16 +18,14 @@ namespace Durrrdle2._0
                 durrrdleWord = $"{durrrdleWord}{randomChar}";
             }
 
-            //print durrrdleWord as a sanity check
-            //Console.WriteLine(durrrdleWord);
             //Console.WriteLine("");
+            Console.WriteLine($"DurrrdleWord is: { durrrdleWord}");
 
             var durrrdleWordCharOne = durrrdleWord.ToCharArray()[0];
             var durrrdleWordCharTwo = durrrdleWord.ToCharArray()[1];
             var durrrdleWordCharThree = durrrdleWord.ToCharArray()[2];
 
             //display letter banks
-            //update word bank to utilize recursive logic
             var letterBankValueOne = "a";
             var letterBankValueTwo = "b";
             var letterBankValueThree = "c";
@@ -72,20 +70,19 @@ namespace Durrrdle2._0
 
                 int containInvalidCharCount = 0;
 
-                bool userInputValidationPassed = false;
+                bool userInputValidationPassed = true;
 
-                Console.WriteLine($"DurrrdleWord is: { durrrdleWord}");
-
-                if (userInputValidationPassed == false)
+                if (userInputValidationPassed)
                 {
                     //userinput length validation. do not print output display if validation failed
                     if (userGuessLength != 3)
                     {
+                        userInputValidationPassed = false;
                         Console.WriteLine("That is not a valid guess. Please enter only three letters and then press Enter.");
                         Console.WriteLine("");
                     }
                     //userinput character validation. do not print output display if validation failed
-                    if (userGuessLength == 3)
+                    if ((userGuessLength == 3) && (userInputValidationPassed))
                     {
                         //digit validation
                         for (int i = 0; i < userGuess.Length; i++)
@@ -104,16 +101,14 @@ namespace Durrrdle2._0
                                 containInvalidCharCount++;
                             }
                         }
+                        if (containInvalidCharCount > 0)
+                        {
+                            userInputValidationPassed = false;
+                            Console.WriteLine("That is not a valid guess. Your input contains a number(s) or special character(s). Please enter three letters and then press Enter.");
+                            Console.WriteLine("");
+                        }
                     }
-                    if (containInvalidCharCount == 0)
-                    {
-                        userInputValidationPassed = true;
-                    }
-                    else
-                    {
-                        Console.WriteLine("That is not a valid guess. Your input contains a number(s) or special character(s). Please enter three letters and then press Enter.");
-                        Console.WriteLine("");
-                    }
+
                 }
                 //index userinput
                 //retain character if it matches to a character of that index and display forever
@@ -223,11 +218,15 @@ namespace Durrrdle2._0
             }
         }
 
-        //public void BuildOutputDisplay(char durrrdleWordChar, char userGuessChar)
+        //public string OutputDisplay = { get; private set; } = "";
+
+        //public void BuildOutputDisplay(char durrrdleWordChar, char userGuessChar, string outputDisplayChar)
         //{
         //    if (durrrdleWordChar == userGuessChar)
         //    {
-
+        //        outputDisplayChar = userGuessChar.ToString();
+        //        OutputDisplay = String.Concat(OutputDisplay, outputDisplayChar);
+        //        correctCharCount++;
         //    }
         //}
     }
