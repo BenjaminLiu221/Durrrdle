@@ -168,26 +168,17 @@ namespace Durrrdle2._0
                             }
                         }
                         //logic to store correct character of durrrdleWord
-                        if (testOutputCharOneDisplay == "_")
+                        if (outputDisplayCharOneToString != "_")
                         {
-                            if (outputDisplayCharOneToString != "_")
-                            {
-                                testOutputCharOneDisplay = outputDisplayCharOneToString;
-                            }
+                            testOutputCharOneDisplay = outputDisplayCharOneToString;
                         }
-                        if (testOutputCharTwoDisplay == "_")
+                        if (outputDisplayCharTwoToString != "_")
                         {
-                            if (outputDisplayCharTwoToString != "_")
-                            {
-                                testOutputCharTwoDisplay = outputDisplayCharTwoToString;
-                            }
+                            testOutputCharTwoDisplay = outputDisplayCharTwoToString;
                         }
-                        if (testOutputCharThreeDisplay == "_")
+                        if (outputDisplayCharThreeToString != "_")
                         {
-                            if (outputDisplayCharThreeToString != "_")
-                            {
-                                testOutputCharThreeDisplay = outputDisplayCharThreeToString;
-                            }
+                            testOutputCharThreeDisplay = outputDisplayCharThreeToString;
                         }
                     }
                 }
