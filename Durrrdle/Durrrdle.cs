@@ -19,7 +19,7 @@ namespace Durrrdle2._0
             }
 
             //Console.WriteLine("");
-            Console.WriteLine($"DurrrdleWord is: { durrrdleWord}");
+            Console.WriteLine($"DurrrdleWord is: {durrrdleWord}");
 
             var durrrdleWordCharOne = durrrdleWord.ToCharArray()[0];
             var durrrdleWordCharTwo = durrrdleWord.ToCharArray()[1];
