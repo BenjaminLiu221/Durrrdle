@@ -32,9 +32,7 @@ namespace Durrrdle2._0
 
             Console.WriteLine("Letter Bank: ");
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.Write($"{letterBankValueOne} ");
-            Console.Write($"{letterBankValueTwo} ");
-            Console.Write($"{letterBankValueThree}");
+            Console.Write($"{letterBankValueOne} {letterBankValueTwo} {letterBankValueThree}");
             Console.ResetColor();
             Console.WriteLine("");
             Console.WriteLine("");
@@ -59,7 +57,7 @@ namespace Durrrdle2._0
                     return;
                 }
 
-                string userGuess = Console.ReadLine();
+                string userGuess = Console.ReadLine().ToLower();
 
                 int userGuessLength = userGuess.Length;
 
@@ -141,9 +139,7 @@ namespace Durrrdle2._0
                 Console.WriteLine("");
                 Console.WriteLine("Letter Bank: ");
                 Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.Write($"{letterBankValueOne} ");
-                Console.Write($"{letterBankValueTwo} ");
-                Console.Write($"{letterBankValueThree}");
+                Console.Write($"{letterBankValueOne} {letterBankValueTwo} {letterBankValueThree}");
                 Console.ResetColor();
                 Console.WriteLine("");
                 Console.WriteLine("");
