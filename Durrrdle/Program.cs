@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Durrrdle2._0
+namespace Durrrdle2Point0
 {
     class Program
     {
